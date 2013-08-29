@@ -51,7 +51,7 @@ end if
 <table>
 	<tr style="HEIGHT: 45px">
 		<td valign="top"><font face=Arial>
-   			<font color="#0000ff">Corte de Disparos</font><br></font><font size=2>Ver o realizar el corte de disparos por maquina para la fecha seleccionada. Para hacer el corte, primero selecciona una fecha y despues haz click en 'Agregar maquina' para capturar los disparos al inicio del dia. Repite para cada una de las maquinas. Por ultimo, selecciona una maquina y haz click en 'Hacer corte' para capturar los disparos para la maquina seleccionada al momento de hacer el corte.</font>
+   			<font color="#0000ff">Corte de Disparos</font><br></font><font size=2>Ver o realizar el corte de disparos por maquina para la fecha seleccionada. Para hacer el corte, selecciona una fecha y despues haz click en 'Agregar maquina' para capturar los disparos al inicio del dia. Repite para cada una de las maquinas. Por ultimo, selecciona una maquina y haz click en 'Hacer corte' para capturar los disparos para la maquina seleccionada al momento de hacer el corte.</font>
 			         &nbsp;
 		</td>
 	</tr>
