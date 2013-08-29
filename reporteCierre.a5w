@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+
+<%a5
+'The componentAlias MUST be UNIQUE for each component on the page. It must not have spaces in the name. Keep name as short as possible
+dim componentAlias as c 
+componentAlias = "REPORTECIERREPO"
+Delete tmpl_REPORTECIERREPO
+DIM tmpl_REPORTECIERREPO as P
+tmpl_REPORTECIERREPO = a5w_load_component("ReporteCierrePorFecha") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:ReporteCierrePorFecha)
+'Following code allows you to override settings in the saved component. DO NOT REMOVE SYSTEM GENERATED OVERRIDE_SETTINGS
+tmpl_REPORTECIERREPO.override_settings = <<%override_settings%
+	componentName = componentAlias
+	_gridFilename = "ReporteCierrePorFecha"
+%override_settings%
+'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+'	dim pageVar as p
+'	pageVar.gridRowCount = 10
+'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+'	rows = pageVar.gridRowCount
+'Resolve session and page variables in the override_settings string.
+a5w_resolveVariablesInOverrideSettings(tmpl_REPORTECIERREPO,session,local_variables())
+delete x_REPORTECIERREPO
+dim x_REPORTECIERREPO as p
+x_REPORTECIERREPO = a5w_run_Component(tmpl_REPORTECIERREPO)  'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl_REPORTECIERREPO) (EDIT:ReporteCierrePorFecha)
+if x_REPORTECIERREPO.RedirectURL <> "" then 
+	response.redirect(x_REPORTECIERREPO.redirectURL)
+	end
+end if 
+?x_REPORTECIERREPO.Output.Head.JavaScript
+?x_REPORTECIERREPO.Output.Head.CSS_Link
+%>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl_REPORTECIERREPO -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Users/Administrator/Documents/Alpha Five V11/workspace.WebProjects/laserConcept_test.WebProject/Shared Resources/css/myMobBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+<meta name="generator" content="Alpha Five HTML Editor Version 11 Build 3381-4096">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+<title></title>
+</head>
+<body class="myMobBluePage">
+<!--Alpha Five Temporary Code End -->
+<body>
+<table>
+	<tr style="HEIGHT: 45px">
+		<td valign="top"><font face=Arial>
+   			<font color="#0000ff">Reporte de Cierre</font><br></font><font size=2>Reporte de cierre de caja por rango de fechas. Para el reporte por dia, selecciona la misma fecha en ambos campos.</font>
+			         &nbsp;
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td style="WIDTH: 20px"></td>
+		<td>
+			<%A5 ?x_REPORTECIERREPO.Output.Body.Search_HTML %>
+			<%A5 ?x_REPORTECIERREPO.Output.Body.Grid_HTML %>
+			<%A5 ?x_REPORTECIERREPO.Output.Body.DetailView_HTML	%>
+		</td>
+	</tr>
+</table>
+</body>

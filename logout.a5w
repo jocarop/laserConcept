@@ -1,0 +1,10 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head><meta name="GENERATOR" content="MSHTML 9.00.8112.16448"      ><!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta http-equiv="Content-Type" content="text/html; charset=unicode" ><%a5
+a5ws_logoutuser(session,request,response)
+session.clear()
+response.redirect("index.a5w")
+%></head>
+<body></body></html>

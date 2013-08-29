@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta name="generator" content="Alpha Five HTML Editor Version 11 Build 3177-4066">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+<script>
+
+window['{tabid}Obj'] = new A5.Tab('{tabid}',[
+{ 	html: 'Search', 	value: '1' }, 
+{ 	html: 'Grid', 	value: '2' }, 
+{ 	html: 'DetailView', 	value: '3' }
+],
+	{
+	theme: '{grid.style}'
+}
+
+);
+</script>
+<title></title>
+</head>
+
+<body><!--IMPORTANT: If you remove a tab pane from the HTML markup,  be sure --><!--to also make the necessary changes in the associated Javascript --><!--Tab Container - Tabs on Top -->
+
+<div class="A5container {grid.style}TabT" id="{tabId}"><!--Tab Start {tabId}-->
+	<div id="{tabId}.TABBAND" class="{grid.style}TabTBand"><!--Tab Buttons Start {tabId}-->
+		<a id="{tabid}.0.TAB" class="" href="#">Search</a>
+		<a id="{tabid}.1.TAB" class="" href="#">Grid</a>
+		<a id="{tabid}.2.TAB" class="" href="#">DetailView</a>
+	<br style="CLEAR: both" >
+	</div><!--Tab Buttons End {tabId}-->
+	<div id="{tabId}.PANES" class="{grid.style}TabTPanes"><!--Tab Panes Start {tabId}-->
+		<div id="{tabid}.0.PANE">
+			{grid.Search_Part}
+		</div>
+		
+		<div id="{tabid}.1.PANE">
+			{grid.Grid_Part}
+		</div>
+		
+		<div id="{tabid}.2.PANE">
+			{grid.DetailView_Part}
+		</div>
+	</div><!--Tab Panes End {tabId}-->
+</div>
+</body></html>

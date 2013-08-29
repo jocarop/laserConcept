@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta name="generator" content="Alpha Five HTML Editor Version 11 Build 2765-3967">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+<title></title>
+</head>
+	<%a5
+	'The componentAlias MUST be UNIQUE for each component on the page. It must not have spaces in the name. Keep name as short as possible
+	dim componentAlias as c 
+	componentAlias = "AGREGARPROSPECT"
+	Delete tmpl_AGREGARPROSPECT
+	DIM tmpl_AGREGARPROSPECT as P
+	tmpl_AGREGARPROSPECT = a5w_load_component("AgregarProspecto") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:AgregarProspecto)
+	'Following code allows you to override settings in the saved component. DO NOT REMOVE SYSTEM GENERATED OVERRIDE_SETTINGS
+	tmpl_AGREGARPROSPECT.override_settings = <<%override_settings%
+		componentName = componentAlias
+		_gridFilename = "AgregarProspecto"
+	%override_settings%
+	'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+	'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+	'	dim pageVar as p
+	'	pageVar.gridRowCount = 10
+	'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+	'	rows = pageVar.gridRowCount
+	'Resolve session and page variables in the override_settings string.
+	a5w_resolveVariablesInOverrideSettings(tmpl_AGREGARPROSPECT,session,local_variables())
+	delete x_AGREGARPROSPECT
+	dim x_AGREGARPROSPECT as p
+	x_AGREGARPROSPECT = a5w_run_Component(tmpl_AGREGARPROSPECT)  'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl_AGREGARPROSPECT) (EDIT:AgregarProspecto)
+	if x_AGREGARPROSPECT.RedirectURL <> "" then 
+		response.redirect(x_AGREGARPROSPECT.redirectURL)
+		end
+	end if 
+	?x_AGREGARPROSPECT.Output.Head.JavaScript
+	?x_AGREGARPROSPECT.Output.Head.CSS_Link
+	%>
+	<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+	<!--CSS for tmpl_AGREGARPROSPECT -->
+	<link rel="stylesheet" type="text/css" href="file:///C:/Program Files/a5V11/css/MobBlue/style.css">
+	<!--Alpha Five Temporary Code End -->
+<%a5 ?x_AGREGARPROSPECT.Output.Body.Body_Tag %>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--Body Tag for tmpl_BUSCARCLIENTES -->
+<body class="myMobBluePage">
+<!--Alpha Five Temporary Code End -->
+<body>
+<table>
+	<tr style="HEIGHT: 45px">
+		<td valign="top"><font face=Arial>
+   			<font color="#0000ff">Agregar Prospecto</font><br></font><font size=2>Dar de alta la informacion 
+      general del prospecto. Los campos marcados con un asterisco (*) son 
+      requeridos.</font>
+			         &nbsp;
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td style="WIDTH: 20px"></td>
+		<td>
+			<%A5 ?x_AGREGARPROSPECT.Output.Body.Search_HTML %>
+			<%A5 ?x_AGREGARPROSPECT.Output.Body.Grid_HTML %>
+			<%A5 ?x_AGREGARPROSPECT.Output.Body.DetailView_HTML	%>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

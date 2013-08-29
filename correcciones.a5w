@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+
+<%a5
+'The componentAlias MUST be UNIQUE for each component on the page. It must not have spaces in the name. Keep name as short as possible
+dim componentAlias as c 
+componentAlias = "EDITARTRATACLIE"
+Delete tmpl_EDITARTRATACLIE
+DIM tmpl_EDITARTRATACLIE as P
+tmpl_EDITARTRATACLIE = a5w_load_component("EditarTrataCliente") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:EditarTrataCliente)
+'Following code allows you to override settings in the saved component. DO NOT REMOVE SYSTEM GENERATED OVERRIDE_SETTINGS
+tmpl_EDITARTRATACLIE.override_settings = <<%override_settings%
+	componentName = componentAlias
+	_gridFilename = "EditarTrataCliente"
+%override_settings%
+'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+'	dim pageVar as p
+'	pageVar.gridRowCount = 10
+'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+'	rows = pageVar.gridRowCount
+'Resolve session and page variables in the override_settings string.
+a5w_resolveVariablesInOverrideSettings(tmpl_EDITARTRATACLIE,session,local_variables())
+delete x_EDITARTRATACLIE
+dim x_EDITARTRATACLIE as p
+x_EDITARTRATACLIE = a5w_run_Component(tmpl_EDITARTRATACLIE)  'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl_EDITARTRATACLIE) (EDIT:EditarTrataCliente)
+if x_EDITARTRATACLIE.RedirectURL <> "" then 
+	response.redirect(x_EDITARTRATACLIE.redirectURL)
+	end
+end if 
+?x_EDITARTRATACLIE.Output.Head.JavaScript
+?x_EDITARTRATACLIE.Output.Head.CSS_Link
+%>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl_EDITARTRATACLIE -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Users/Administrator/Documents/Alpha Five V11/workspace.WebProjects/laserConcept_test.WebProject/Shared Resources/css/myMobBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+	</head>
+	<body class="myMobBluePage">
+<body>
+<table>
+	<tr style="HEIGHT: 60px">
+		<td valign="top"><font face=Arial>
+   			<font color="#0000ff">Corregir Expediente</font><br></font>
+			<font size=2>Introducir al menos un criterio de busqueda y haga click en 'Buscar' o presione la tecla 'Enter'. Hacer los cambios necesarios en 'Tratamientos' o 'Pagos' respectivamente y hacer click en 'Guardar'. Para deshacer los cambios sin guardar, hacer click en 'Cancelar'.</font>
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td style="WIDTH: 20px"></td>
+		<td>
+			<%A5 ?x_EDITARTRATACLIE.Output.Body.Search_HTML %>
+			<%A5 ?x_EDITARTRATACLIE.Output.Body.Grid_HTML %>
+			<%A5 ?x_EDITARTRATACLIE.Output.Body.DetailView_HTML	%>
+		</td>
+	</tr>
+</table>
+</body>
+</html>				

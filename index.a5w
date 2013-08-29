@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!doctype html public "-//w3c//dtd xhtml 1.0 strict//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" >
+<head>
+
+<%a5
+'The componentAlias MUST be UNIQUE for each component on the page. It must not have spaces in the name. Keep name as short as possible
+dim componentAlias as c 
+componentAlias = "LOGIN"
+Delete tmpl_LOGIN
+DIM tmpl_LOGIN as P
+tmpl_LOGIN = a5w_load_component("Login") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:Login)
+'Following code allows you to override settings in the saved component, and specify the component alias (componentName property).
+'Tip: Keep the componentName property short because this name is used in page URLs, and it will help keep the URLs short.
+'Each component on a page must have a unique alias (componentName property).
+with tmpl_LOGIN
+	componentName = "LOGIN"
+end with 
+'=======================================compute the HTML for the Component=======================================
+delete x_LOGIN
+dim x_LOGIN as p
+x_LOGIN = a5w_run_Component(tmpl_LOGIN)  'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl_LOGIN) (EDIT:Login)
+'=============================================================================================================
+if x_LOGIN.RedirectURL <> "" then 
+	response.redirect(x_LOGIN.redirectURL)
+	end
+end if 
+?x_LOGIN.Output.Head.JavaScript
+?x_LOGIN.Output.Head.CSS_Link
+%>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl_LOGIN -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Program Files/a5V11/css/MobBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+	<title>Sistema de Administracion LaserConcept</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="index3.css" media="screen" />
+<%a5 ?x_LOGIN.Output.Body.Body_Tag %>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--Body Tag for tmpl_LOGIN -->
+<body class="myMobBluePage">
+<!--Alpha Five Temporary Code End -->
+</head>
+
+
+<div id="header" style="HEIGHT: auto">
+	<table width="100%" bgcolor="#99b4d1">
+		<tr>
+			<td width="100%" valign="middle" align="center"><font size=5 face="Arial Rounded MT Bold" color="#ffffff"><strong>laser</strong></font><font face="Arial Narrow" size=5 
+			    color="#ffffff">concept</font></td>
+		</tr>
+		<tr>
+			<td width="100%" valign="middle" align="center"><font size=3 color="#ffffff">Sistema de Administracion</font></td>
+		</tr>
+	</table>
+</div>
+<div class="colmask fullpage">
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+	<table align="center">
+	  <tr>
+	    <td><%A5 ?x_LOGIN.Output.Body.Login_Errors %></td>
+	  </tr>
+	  <tr>
+	    <td><%A5 ?x_LOGIN.Output.Body.Login_HTML %></td>
+	  </tr>
+	</table>
+</div>
+
+
+
+</body>
+</html>

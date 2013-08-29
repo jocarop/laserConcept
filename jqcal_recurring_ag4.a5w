@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- The following lines are only needed if you use the "DIV" option for showing edits/adds" -->
+<script src="jqcalsrc/jquery-1.7.1.js" type="text/javascript"></script> 
+<script src="jqcalsrc/Plugins/Common.js" type="text/javascript"></script>
+<script src="jqcalsrc/Plugins/jquery.ifrmdailog.js" defer="defer" type="text/javascript"></script>
+ 
+
+
+<head>
+
+
+<%a5
+Delete tmpl_jqcal_recu
+DIM tmpl_jqcal_recu as P
+tmpl_jqcal_recu = a5w_load_component("jqcal_recurring") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:jqcal_recurring)
+
+'Override settings start -----------------------------------------
+with tmpl_jqcal_recu
+.alias = "jqcal_recu"
+_dialogFilename = "jqcal_recurring"
+end with 
+'Override settings end -----------------------------------------
+
+delete x_jqcal_recu
+dim x_jqcal_recu as p
+x_jqcal_recu = a5w_run_Component(tmpl_jqcal_recu) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:jqcal_recurring)
+
+?x_jqcal_recu.Output.Head.JavaScript
+?x_jqcal_recu.Output.Head.CSS_Link
+
+?x_jqcal_recu.Output.Head.Title 
+%>
+
+
+<%a5
+Delete tmpl_JQCAL_AG4
+DIM tmpl_JQCAL_AG4 as P
+tmpl_JQCAL_AG4 = a5w_load_component("jqcal_recurring_ag4") ''SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:jqcal_recurring_ag4)
+
+'Override settings start -----------------------------------------
+with tmpl_JQCAL_AG4
+.alias = "JQCAL_AG4"
+_dialogFilename = "jqcal_recurring_ag4"
+end with 
+'Override settings end -----------------------------------------
+
+delete x_JQCAL_AG4
+dim x_JQCAL_AG4 as p
+x_JQCAL_AG4 = a5w_run_Component(tmpl_JQCAL_AG4) 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl) (EDIT:jqcal_recurring_ag4)
+
+?x_JQCAL_AG4.Output.Head.JavaScript
+?x_JQCAL_AG4.Output.Head.CSS_Link
+
+?x_JQCAL_AG4.Output.Head.Title 
+%>
+
+
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Program Files/a5V11/css/MobBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+
+
+
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Program Files (x86)/a5V11/css/GrBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+</head>
+
+
+<%a5 ?x_jqcal_recu.Output.Body.Body_tag %>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--Body Tag for tmpl -->
+
+<body class="MobBluePage">
+
+<p><!--Alpha Five Temporary Code End -->
+<%a5 ?x_JQCAL_AG4.Output.Body.Dialog2_HTML %>
+</p>
+
+
+
+</body>
+
+</html>
+

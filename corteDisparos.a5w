@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+
+<%a5
+'The componentAlias MUST be UNIQUE for each component on the page. It must not have spaces in the name. Keep name as short as possible
+dim componentAlias as c 
+componentAlias = "DISPAROSINCIO"
+Delete tmpl_DISPAROSINCIO
+DIM tmpl_DISPAROSINCIO as P
+tmpl_DISPAROSINCIO = a5w_load_component("DisparosIncio") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:DisparosIncio)
+'Following code allows you to override settings in the saved component. DO NOT REMOVE SYSTEM GENERATED OVERRIDE_SETTINGS
+tmpl_DISPAROSINCIO.override_settings = <<%override_settings%
+	componentName = componentAlias
+	_gridFilename = "DisparosIncio"
+%override_settings%
+'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+'	dim pageVar as p
+'	pageVar.gridRowCount = 10
+'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+'	rows = pageVar.gridRowCount
+'Resolve session and page variables in the override_settings string.
+a5w_resolveVariablesInOverrideSettings(tmpl_DISPAROSINCIO,session,local_variables())
+delete x_DISPAROSINCIO
+dim x_DISPAROSINCIO as p
+x_DISPAROSINCIO = a5w_run_Component(tmpl_DISPAROSINCIO)  'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl_DISPAROSINCIO) (EDIT:DisparosIncio)
+if x_DISPAROSINCIO.RedirectURL <> "" then 
+	response.redirect(x_DISPAROSINCIO.redirectURL)
+	end
+end if 
+?x_DISPAROSINCIO.Output.Head.JavaScript
+?x_DISPAROSINCIO.Output.Head.CSS_Link
+%>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl_DISPAROSINCIO -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Users/Administrator/Documents/Alpha Five V11/workspace.WebProjects/laserConcept_test.WebProject/Shared Resources/css/myMobBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+<meta name="generator" content="Alpha Five HTML Editor Version 11 Build 3381-4096">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+<title></title>
+</head>
+<body class="myMobBluePage">
+<!--Alpha Five Temporary Code End -->
+<body>
+<table>
+	<tr style="HEIGHT: 45px">
+		<td valign="top"><font face=Arial>
+   			<font color="#0000ff">Corte de Disparos</font><br></font><font size=2>Ver o realizar el corte de disparos por maquina para la fecha seleccionada. Para hacer el corte, primero selecciona una fecha y despues haz click en 'Agregar maquina' para capturar los disparos al inicio del dia. Repite para cada una de las maquinas. Por ultimo, selecciona una maquina y haz click en 'Hacer corte' para capturar los disparos para la maquina seleccionada al momento de hacer el corte.</font>
+			         &nbsp;
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td style="WIDTH: 20px"></td>
+		<td>
+			<%A5 ?x_DISPAROSINCIO.Output.Body.Search_HTML %>
+			<%A5 ?x_DISPAROSINCIO.Output.Body.Grid_HTML %>
+			<%A5 ?x_DISPAROSINCIO.Output.Body.DetailView_HTML	%>
+		</td>
+	</tr>
+</table>
+</body></html>

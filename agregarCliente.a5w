@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta name="generator" content="Alpha Five HTML Editor Version 11 Build 2765-3967">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+<title></title>
+</head>
+	<%a5
+	'The componentAlias MUST be UNIQUE for each component on the page. It must not have spaces in the name. Keep name as short as possible
+	dim componentAlias as c 
+	componentAlias = "AGREGARCLIENTE"
+	Delete tmpl_AGREGARCLIENTE
+	DIM tmpl_AGREGARCLIENTE as P
+	tmpl_AGREGARCLIENTE = a5w_load_component("AgregarCliente") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:AgregarCliente)
+	'Following code allows you to override settings in the saved component. DO NOT REMOVE SYSTEM GENERATED OVERRIDE_SETTINGS
+	tmpl_AGREGARCLIENTE.override_settings = <<%override_settings%
+		componentName = componentAlias
+		_gridFilename = "AgregarCliente"
+	%override_settings%
+	'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+	'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+	'	dim pageVar as p
+	'	pageVar.gridRowCount = 10
+	'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+	'	rows = pageVar.gridRowCount
+	'Resolve session and page variables in the override_settings string.
+	a5w_resolveVariablesInOverrideSettings(tmpl_AGREGARCLIENTE,session,local_variables())
+	delete x_AGREGARCLIENTE
+	dim x_AGREGARCLIENTE as p
+	x_AGREGARCLIENTE = a5w_run_Component(tmpl_AGREGARCLIENTE)  'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl_AGREGARCLIENTE) (EDIT:AgregarCliente)
+	if x_AGREGARCLIENTE.RedirectURL <> "" then 
+		response.redirect(x_AGREGARCLIENTE.redirectURL)
+		end
+	end if 
+	?x_AGREGARCLIENTE.Output.Head.JavaScript
+	?x_AGREGARCLIENTE.Output.Head.CSS_Link
+	%>
+	<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+	<!--CSS for tmpl_AGREGARCLIENTE -->
+	<link rel="stylesheet" type="text/css" href="file:///C:/Program Files/a5V11/css/MobBlue/style.css">
+	<!--Alpha Five Temporary Code End -->
+<%a5 ?x_AGREGARCLIENTE.Output.Body.Body_Tag %>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--Body Tag for tmpl_BUSCARCLIENTES -->
+<body class="myMobBluePage">
+<!--Alpha Five Temporary Code End -->
+<body>
+<table>
+	<tr style="HEIGHT: 45px">
+		<td valign="top"><font face=Arial>
+   			<font color="#0000ff">Agregar Cliente</font><br></font><font size=2>Dar de alta la informacion 
+      general del cliente. Los campos marcados con un asterisco (*) son 
+      requeridos.</font>
+			         &nbsp;
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td style="WIDTH: 20px"></td>
+		<td>
+			<%A5 ?x_AGREGARCLIENTE.Output.Body.Search_HTML %>
+			<%A5 ?x_AGREGARCLIENTE.Output.Body.Grid_HTML %>
+			<%A5 ?x_AGREGARCLIENTE.Output.Body.DetailView_HTML	%>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

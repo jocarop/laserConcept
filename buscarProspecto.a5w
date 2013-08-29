@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta name="generator" content="Alpha Five HTML Editor Version 11 Build 2765-3967">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+<title></title>
+</head>
+	<%a5
+	'The componentAlias MUST be UNIQUE for each component on the page. It must not have spaces in the name. Keep name as short as possible
+	dim componentAlias as c 
+	componentAlias = "BUSCARPROSPECTO"
+	Delete tmpl_BUSCARPROSPECTO
+	DIM tmpl_BUSCARPROSPECTO as P
+	tmpl_BUSCARPROSPECTO = a5w_load_component("BuscarProspectos") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:BuscarProspectos)
+	'Following code allows you to override settings in the saved component. DO NOT REMOVE SYSTEM GENERATED OVERRIDE_SETTINGS
+	tmpl_BUSCARPROSPECTO.override_settings = <<%override_settings%
+		componentName = componentAlias
+		_gridFilename = "BuscarProspectos"
+	%override_settings%
+	'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+	'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+	'	dim pageVar as p
+	'	pageVar.gridRowCount = 10
+	'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+	'	rows = pageVar.gridRowCount
+	'Resolve session and page variables in the override_settings string.
+	a5w_resolveVariablesInOverrideSettings(tmpl_BUSCARPROSPECTO,session,local_variables())
+	delete x_BUSCARPROSPECTO
+	dim x_BUSCARPROSPECTO as p
+	x_BUSCARPROSPECTO = a5w_run_Component(tmpl_BUSCARPROSPECTO)  'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl_BUSCARPROSPECTO) (EDIT:BuscarProspectos)
+	if x_BUSCARPROSPECTO.RedirectURL <> "" then 
+		response.redirect(x_BUSCARPROSPECTO.redirectURL)
+		end
+	end if 
+	?x_BUSCARPROSPECTO.Output.Head.JavaScript
+	?x_BUSCARPROSPECTO.Output.Head.CSS_Link
+	%>
+	<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+	<!--CSS for tmpl_BUSCARPROSPECTO -->
+	<link rel="stylesheet" type="text/css" href="file:///C:/Program Files/a5V11/css/MobBlue/style.css">
+	<!--Alpha Five Temporary Code End -->
+<%a5 ?x_BUSCARPROSPECTO.Output.Body.Body_Tag %>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--Body Tag for tmpl_BUSCARCLIENTES -->
+<body class="myMobBluePage">
+<!--Alpha Five Temporary Code End -->
+<body>
+<table>
+	<tr style="HEIGHT: 45px">
+		<td valign="top"><font face=Arial>
+   			<font color="#0000ff">Buscar Prospecto</font><br></font>
+			<font size=2>Introducir al menos un criterio de busqueda y haga click en 'Buscar' o presione la tecla 'Enter'. Para ver el expediente del prospecto, haga click en 'Ver'.</font>
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td style="WIDTH: 20px"></td>
+		<td>
+			<%A5 ?x_BUSCARPROSPECTO.Output.Body.Search_HTML %>
+			<%A5 ?x_BUSCARPROSPECTO.Output.Body.Grid_HTML %>
+			<%A5 ?x_BUSCARPROSPECTO.Output.Body.DetailView_HTML	%>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
