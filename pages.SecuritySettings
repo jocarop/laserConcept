@@ -246,4 +246,8 @@
 <action="allow">
 <groups="">
 >
+<[63]<page="Personas.a5wcmp">
+<action="login">
+<groups="1dc873da290143399dd84e5692c7f294,26a9e1362860404bbb0284e26cabcfae">
+>
 >
