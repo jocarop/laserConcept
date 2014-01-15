@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<%a5
+'The componentAlias MUST be UNIQUE for each component on the page. It must not have spaces in the name. Keep name as short as possible
+dim componentAlias as c 
+componentAlias = "REPORTEASISTENC"
+Delete tmpl_REPORTEASISTENC
+DIM tmpl_REPORTEASISTENC as P
+tmpl_REPORTEASISTENC = a5w_load_component("ReporteAsistencia") 'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (LOAD:ReporteAsistencia)
+'Following code allows you to override settings in the saved component. DO NOT REMOVE SYSTEM GENERATED OVERRIDE_SETTINGS
+tmpl_REPORTEASISTENC.override_settings = <<%override_settings%
+	componentName = componentAlias
+	_gridFilename = "ReporteAsistencia"
+%override_settings%
+'TIP: To refer to local or page variables in the override_settings string, you must first define a local
+'dot variable called 'pageVar' with properties for all of the variables you want to reference. For example:
+'	dim pageVar as p
+'	pageVar.gridRowCount = 10
+'Then, in the override_settings string, you can reference pageVar.gridRowCount. For example:
+'	rows = pageVar.gridRowCount
+'Resolve session and page variables in the override_settings string.
+a5w_resolveVariablesInOverrideSettings(tmpl_REPORTEASISTENC,session,local_variables())
+delete x_REPORTEASISTENC
+dim x_REPORTEASISTENC as p
+x_REPORTEASISTENC = a5w_run_Component(tmpl_REPORTEASISTENC)  'SYSTEM GENERATED COMMENT - PLEASE DO NOT REMOVE (RUN:tmpl_REPORTEASISTENC) (EDIT:ReporteAsistencia)
+if x_REPORTEASISTENC.RedirectURL <> "" then 
+	response.redirect(x_REPORTEASISTENC.redirectURL)
+	end
+end if 
+?x_REPORTEASISTENC.Output.Head.JavaScript
+?x_REPORTEASISTENC.Output.Head.CSS_Link
+%>
+<!--Alpha Five Temporary Code Start - Will be automatically removed when page is published -->
+<!--CSS for tmpl_REPORTEASISTENC -->
+<link rel="stylesheet" type="text/css" href="file:///C:/Users/Administrator/Documents/Alpha Five V11/workspace.WebProjects/laserConcept_test.WebProject/Shared Resources/css/myMobBlue/style.css">
+<!--Alpha Five Temporary Code End -->
+
+<meta name="generator" content="Alpha Five HTML Editor Version 11 Build 3381-4096">
+<!-- must use in order to make XP Themes render -->
+<meta HTTP-EQUIV="MSThemeCompatible" content="Yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+
+<title></title>
+</head>
+<body class="myMobBluePage">
+<body>
+<table>
+	<tr style="HEIGHT: 45px">
+		<td valign="top"><font face=Arial>
+   			<font color="#0000ff">Reporte de Asistencia</font><br><font size=2>Reporte de asistencia por dia. Para ver el reporte selecciona la fecha deseada.</font>
+			         &nbsp;
+			         &nbsp;
+		</td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td style="WIDTH: 20px"></td>
+		<td>
+			<%A5 ?x_REPORTEASISTENC.Output.Body.Search_HTML %>
+			<%A5 ?x_REPORTEASISTENC.Output.Body.Grid_HTML %>
+			<%A5 ?x_REPORTEASISTENC.Output.Body.DetailView_HTML	%>
+		</td>
+	</tr>
+</table>
+</body>
+</body></html>

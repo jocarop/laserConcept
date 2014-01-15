@@ -274,4 +274,16 @@
 <action="login">
 <groups="1dc873da290143399dd84e5692c7f294,26a9e1362860404bbb0284e26cabcfae">
 >
+<[70]<page="ReporteAsistencia.a5wcmp">
+<action="login">
+<groups="1dc873da290143399dd84e5692c7f294">
+>
+<[71]<page="reporteAsistencia.a5w">
+<action="allow">
+<groups="">
+>
+<[72]<page="AgregarSesionLaserDlg.a5wcmp">
+<action="login">
+<groups="1dc873da290143399dd84e5692c7f294,26a9e1362860404bbb0284e26cabcfae">
+>
 >
